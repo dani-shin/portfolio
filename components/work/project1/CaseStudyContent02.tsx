@@ -113,7 +113,7 @@ export default function CaseStudyContent02() {
           The first was scheduling logic. Each doctor supported a different set of products, schedules, and prescription categories, which made it easy for appointments to become fragmented across categories.
         </p>
 
-        <div className="mb-7 w-full min-w-0 max-w-full overflow-x-auto overscroll-x-contain">
+        <div className="mb-7 w-full min-w-0 max-w-[1040px] overflow-x-auto overscroll-x-contain">
           <picture className="block">
             <source media="(max-width: 480px)" srcSet="/work/project1/cs-2-mo.png" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -121,7 +121,7 @@ export default function CaseStudyContent02() {
               src="/work/project1/cs-2-pc.png"
               alt="Scheduling logic and questionnaire structure comparison table"
               draggable={false}
-              className="block h-auto w-full max-w-none select-none min-[481px]:max-[899px]:min-w-[820px]"
+              className="block h-auto w-full max-w-[1040px] select-none min-[481px]:min-w-[820px]"
             />
           </picture>
         </div>
