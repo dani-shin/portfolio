@@ -265,7 +265,7 @@ export default function SideProject3Page() {
               </h4>
               <div className="w-full overflow-hidden rounded-[4px] border border-[#D6D6D6] bg-white">
                 <Image
-                  src="/work/sideproject3/sideproject-3-3-final.png"
+                  src="/work/sideproject3/3-final.png"
                   alt="Final production guide for long umbrella"
                   width={960}
                   height={540}
