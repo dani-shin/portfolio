@@ -153,6 +153,7 @@ export default function CaseStudyContent03() {
             <div className="w-full min-[901px]:w-[58.95%] min-[901px]:shrink-0">
               <picture className="flex h-full w-full items-center justify-center">
                 <source media="(max-width: 480px)" srcSet="/work/project3/solution-3-b-1-mo.png" />
+                <source media="(max-width: 900px)" srcSet="/work/project3/solution-3-b-1-tb.png" />
                 <img
                   src="/work/project3/solution-3-b-1-pc.png"
                   alt="Chart comparison"
