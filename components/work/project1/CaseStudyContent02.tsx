@@ -113,15 +113,15 @@ export default function CaseStudyContent02() {
           The first was scheduling logic. Each doctor supported a different set of products, schedules, and prescription categories, which made it easy for appointments to become fragmented across categories.
         </p>
 
-        <div className="mb-7 w-full min-w-0 max-w-[1040px] overflow-x-auto overscroll-x-contain">
-          <picture className="block">
+        <div className="mb-7 mx-[calc((100%_-_100vw)/2)] overflow-x-auto overscroll-x-contain px-[calc((100vw_-_100%)/2)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[900px]:mx-0 min-[900px]:w-full min-[900px]:max-w-[1040px] min-[900px]:overflow-visible min-[900px]:px-0">
+          <picture className="flex w-max min-w-full items-start after:block after:w-[calc((100vw_-_100%)/2)] after:shrink-0 after:content-[''] min-[900px]:block min-[900px]:w-full min-[900px]:after:hidden">
             <source media="(max-width: 480px)" srcSet="/work/project1/cs-2-mo.png" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/work/project1/cs-2-pc.png"
               alt="Scheduling logic and questionnaire structure comparison table"
               draggable={false}
-              className="block h-auto w-full max-w-[1040px] select-none min-[481px]:min-w-[820px]"
+              className="block h-[278px] w-auto max-w-none shrink-0 select-none min-[481px]:h-auto min-[481px]:w-full min-[481px]:min-w-[820px] min-[481px]:max-w-[1040px]"
             />
           </picture>
         </div>
