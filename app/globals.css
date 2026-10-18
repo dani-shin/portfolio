@@ -1,26 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&family=Pretendard:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F0F1EE;
+  --foreground: #111111;
+
+  /* Layout */
+  --content-width: 960px;
+  --page-gutter: 40px;
+  --mobile-gutter: 20px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-serif: 'Diphylleia', serif;
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  --breakpoint-md: 481px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* 페이지 전환: 디졸브(페이드) + 아주 약한 위로 이동 */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+body {
+  cursor: image-set(url("/cursor-default.png") 3x) 4 4, auto;
+}
+
+a,
+button,
+.project-card {
+  cursor: image-set(url("/cursor-hover.png") 2.5x) 4 4, pointer;
+}
+
+.draggable {
+  cursor: grab;
+}
+
+.draggable:active {
+  cursor: grabbing;
+}
+
+.page-transition {
+  /* backwards: 애니메이션이 끝나면 opacity/transform을 완전히 해제해서
+     position: sticky / fixed 요소에 영향을 주지 않음 */
+  animation: page-enter 800ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+/* 모션 줄이기 설정을 켠 사용자는 애니메이션 제거 */
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+.site-container {
+  width: min(
+    var(--content-width),
+    calc(100% - (var(--page-gutter) * 2))
+  );
+  margin-inline: auto;
+}
+
+@media (max-width: 767px) {
+  .site-container {
+    width: calc(100% - clamp(40px, calc(40px + (100vw - 481px) * 40 / 338), 80px));
+  }
+}
+
+@media (max-width: 481px) {
+  .site-container {
+    width: calc(100% - 40px);
+  }
+}
+
+:root {
+  --type-headline-1-size: 24px;
+  --type-headline-1-line-height: 1.4;
+  --type-headline-1-weight: 700;
+
+  --type-headline-2-size: 24px;
+  --type-headline-2-line-height: 1.4;
+  --type-headline-2-weight: 400;
+
+  --type-title-1-size: 22px;
+  --type-title-1-line-height: 1.46;
+  --type-title-1-weight: 700;
+
+  --type-title-2-size: 22px;
+  --type-title-2-line-height: 1.46;
+  --type-title-2-weight: 400;
+
+  --type-title-3-size: 18px;
+  --type-title-3-line-height: 1.56;
+  --type-title-3-weight: 700;
+
+  --type-subtitle-1-size: 16px;
+  --type-subtitle-1-line-height: 1.48;
+  --type-subtitle-1-weight: 700;
+
+  --type-subtitle-2-size: 14px;
+  --type-subtitle-2-line-height: 1.46;
+  --type-subtitle-2-weight: 700;
+
+  --type-body-1-size: 16px;
+  --type-body-1-line-height: 1.48;
+  --type-body-1-weight: 400;
+
+  --type-body-2-size: 14px;
+  --type-body-2-line-height: 1.46;
+  --type-body-2-weight: 400;
+
+  --type-caption-1-size: 13px;
+  --type-caption-1-line-height: 1.4;
+  --type-caption-1-weight: 700;
+
+  --type-caption-2-size: 13px;
+  --type-caption-2-line-height: 1.4;
+  --type-caption-2-weight: 400;
+}
+
+/* 2. PC typography */
+@media (min-width: 481px) {
+  :root {
+    --type-headline-1-size: 32px;
+    --type-headline-1-line-height: 1.3;
+    --type-headline-1-weight: 700;
+  
+    --type-headline-2-size: 32px;
+    --type-headline-2-line-height: 1.44;
+    --type-headline-2-weight: 400;
+  
+    --type-title-1-size: 26px;
+    --type-title-1-line-height: 1.48;
+    --type-title-1-weight: 700;
+  
+    --type-title-2-size: 26px;
+    --type-title-2-line-height: 1.48;
+    --type-title-2-weight: 400;
+  
+    --type-title-3-size: 20px;
+    --type-title-3-line-height: 1.6;
+    --type-title-3-weight: 700;
+  
+    --type-subtitle-1-size: 18px;
+    --type-subtitle-1-line-height: 1.56;
+    --type-subtitle-1-weight: 700;
+  
+    --type-subtitle-2-size: 16px;
+    --type-subtitle-2-line-height: 1.48;
+    --type-subtitle-2-weight: 700;
+  
+    --type-body-1-size: 18px;
+    --type-body-1-line-height: 1.56;
+    --type-body-1-weight: 400;
+  
+    --type-body-2-size: 16px;
+    --type-body-2-line-height: 1.48;
+    --type-body-2-weight: 400;
+  
+    --type-caption-1-size: 14px;
+    --type-caption-1-line-height: 1.4;
+    --type-caption-1-weight: 700;
+  
+    --type-caption-2-size: 14px;
+    --type-caption-2-line-height: 1.4;
+    --type-caption-2-weight: 400;
+  }
+}
+
+@layer utilities {
+  .type-headline-1 {
+    font-size: var(--type-headline-1-size);
+    line-height: var(--type-headline-1-line-height);
+    font-weight: var(--type-headline-1-weight);
+  }
+
+  .type-headline-2 {
+    font-size: var(--type-headline-2-size);
+    line-height: var(--type-headline-2-line-height);
+    font-weight: var(--type-headline-2-weight);
+  }
+
+  .type-title-1 {
+    font-size: var(--type-title-1-size);
+    line-height: var(--type-title-1-line-height);
+    font-weight: var(--type-title-1-weight);
+  }
+
+  .type-title-2 {
+    font-size: var(--type-title-2-size);
+    line-height: var(--type-title-2-line-height);
+    font-weight: var(--type-title-2-weight);
+  }
+
+  .type-title-3 {
+    font-size: var(--type-title-3-size);
+    line-height: var(--type-title-3-line-height);
+    font-weight: var(--type-title-3-weight);
+  }
+
+  .type-subtitle-1 {
+    font-size: var(--type-subtitle-1-size);
+    line-height: var(--type-subtitle-1-line-height);
+    font-weight: var(--type-subtitle-1-weight);
+  }
+
+  .type-subtitle-2 {
+    font-size: var(--type-subtitle-2-size);
+    line-height: var(--type-subtitle-2-line-height);
+    font-weight: var(--type-subtitle-2-weight);
+  }
+
+  .type-body-1 {
+    font-size: var(--type-body-1-size);
+    line-height: var(--type-body-1-line-height);
+    font-weight: var(--type-body-1-weight);
+  }
+
+  .type-body-2 {
+    font-size: var(--type-body-2-size);
+    line-height: var(--type-body-2-line-height);
+    font-weight: var(--type-body-2-weight);
+  }
+
+  .type-caption-1 {
+    font-size: var(--type-caption-1-size);
+    line-height: var(--type-caption-1-line-height);
+    font-weight: var(--type-caption-1-weight);
+  }
+
+  .type-caption-2 {
+    font-size: var(--type-caption-2-size);
+    line-height: var(--type-caption-2-line-height);
+    font-weight: var(--type-caption-2-weight);
+  }
+}
+
+.hero-title {
+  -webkit-text-stroke: 0.25px #111;
+}
+
+.featured-arrow {
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .featured-arrow:hover {
+    background-color: #EBEBEB;
+  }
+}
+
+.featured-arrow:active {
+  background-color: #D6D6D6;
+}
+
+@media (max-width: 899px) {
+  .side-projects-scroll {
+    --side-margin: clamp(20px, calc(20px + (100vw - 481px) * 20 / 338), 40px);
+    --card-gap: clamp(12px, calc(12px + (100vw - 481px) * 8 / 468), 20px);
+
+    --peek: 0.3;
+
+    --card-width: calc(
+      (100vw - var(--side-margin) - var(--card-gap)) / (1 + var(--peek))
+    );
+
+    gap: var(--card-gap);
+    width: calc(100% + var(--side-margin));
+    margin-right: calc(var(--side-margin) * -1);
+    padding-right: var(--side-margin);
+  }
+
+  .side-project-card {
+    width: var(--card-width);
+  }
+}
+
+.slide-in-right {
+  animation: slide-in-right 400ms ease-out forwards;
+}
+
+.slide-in-left {
+  animation: slide-in-left 400ms ease-out forwards;
+}
+
+.slide-out-left {
+  animation: slide-out-left 400ms ease-out forwards;
+}
+
+.slide-out-right {
+  animation: slide-out-right 400ms ease-out forwards;
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-out-right {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.work-info-text {
+  --t: calc((100vw - 480px) / 470);
+  padding-inline: clamp(20px, calc(20px + var(--t) * 22), 42px);
+  padding-top: clamp(16px, calc(16px + var(--t) * 8), 24px);
+  padding-bottom: clamp(20px, calc(20px + var(--t) * 8), 28px);
+}
+
+.fluid-card-pt,
+.fluid-info-pt {
+  padding-top: clamp(14px, calc(14px + (100vw - 480px) * 6 / 420), 20px);
+}
+
+.fluid-card-px {
+  padding-left: clamp(16px, calc(16px + (100vw - 480px) * 8 / 420), 24px);
+  padding-right: clamp(16px, calc(16px + (100vw - 480px) * 8 / 420), 24px);
+}
+
+.fluid-card-pb {
+  padding-bottom: clamp(14px, calc(14px + (100vw - 480px) * 10 / 420), 24px);
+}
+
+.fluid-summary-pb {
+  padding-bottom: clamp(24px, calc(24px + (100vw - 480px) * 2 / 420), 26px);
+}
+
+.fluid-info-px {
+  padding-left: clamp(12px, calc(12px + (100vw - 480px) * 12 / 420), 24px);
+  padding-right: clamp(12px, calc(12px + (100vw - 480px) * 12 / 420), 24px);
+}
+
+.fluid-info-pb {
+  padding-bottom: clamp(24px, calc(32px - (100vw - 480px) * 8 / 420), 32px);
+}
+
+.fluid-info-gap {
+  gap: clamp(16px, calc(16px + (100vw - 480px) * 8 / 420), 24px);
+}
+
+.fluid-info-text-px {
+  padding-left: clamp(4px, calc(4px + (100vw - 480px) * 4 / 420), 8px);
+  padding-right: clamp(4px, calc(4px + (100vw - 480px) * 4 / 420), 8px);
+}
+
+.fluid-compare-pt {
+  padding-top: clamp(16px, calc(16px + (100vw - 480px) * 8 / 420), 24px);
+}
+
+.fluid-compare-px {
+  padding-left: clamp(20px, calc(20px + (100vw - 480px) * 22 / 420), 42px);
+  padding-right: clamp(20px, calc(20px + (100vw - 480px) * 22 / 420), 42px);
+}
+
+.fluid-compare-pb {
+  padding-bottom: clamp(20px, calc(20px + (100vw - 480px) * 8 / 420), 28px);
+}
+
+.fluid-compare-gap {
+  gap: clamp(12px, calc(12px + (100vw - 480px) * 24 / 420), 36px);
+}
+
+.fluid-subinfo-px {
+  padding-left: clamp(20px, calc(20px + (100vw - 480px) * 22 / 420), 42px);
+  padding-right: clamp(20px, calc(20px + (100vw - 480px) * 22 / 420), 42px);
+}
+
+.fluid-subinfo-pb {
+  padding-bottom: clamp(20px, calc(20px + (100vw - 480px) * 4 / 420), 24px);
+}
+
+.fluid-subinfo-gap {
+  gap: clamp(16px, calc(16px + (100vw - 480px) * 4 / 420), 20px);
+}
+
+.fluid-numcard-gap {
+  gap: clamp(12px, calc(12px + (100vw - 480px) * 8 / 420), 20px);
+}
+
+.fluid-numcard-px {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+@media (min-width: 769px) {
+  .fluid-numcard-px {
+    padding-left: clamp(16px, calc(16px + (100vw - 769px) * 8 / 131), 24px);
+    padding-right: clamp(16px, calc(16px + (100vw - 769px) * 8 / 131), 24px);
+  }
 }
