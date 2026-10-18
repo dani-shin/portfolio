@@ -163,13 +163,13 @@ export default function CaseStudyContent03() {
             </div>
 
             <div className="flex w-full flex-col min-[481px]:flex-row min-[901px]:w-[41.05%] min-[901px]:shrink-0 min-[901px]:flex-col">
-              <picture className="block w-full min-[481px]:w-[42.4%] min-[481px]:shrink-0 min-[901px]:w-full">
+              <picture className="flex w-full items-center justify-center min-[481px]:w-[42.4%] min-[481px]:shrink-0 min-[901px]:block min-[901px]:w-full">
                 <source media="(max-width: 480px)" srcSet="/work/project3/solution-3-b-2-mo.png" />
                 <source media="(max-width: 900px)" srcSet="/work/project3/solution-3-b-2-tb.png" />
                 <img
                   src="/work/project3/solution-3-b-2-pc.png"
                   alt="Bar chart solution"
-                  className="block h-full w-full object-cover min-[481px]:h-full"
+                  className="block h-auto w-full object-contain"
                 />
               </picture>
 
