@@ -233,10 +233,10 @@ export default function CaseStudyTabs({
         className="sticky z-[90] mb-8 min-[481px]:mb-9 border-b border-[#D6D6D6] bg-[rgba(240,241,238,0.88)] backdrop-blur-[6px] min-[900px]:border-b-0"
       >
         <div className={containerClassName}>
-          <div className="w-full overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="mx-[calc((100%_-_100vw)/2)] overflow-x-auto px-[calc((100vw_-_100%)/2)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[900px]:mx-0 min-[900px]:overflow-visible min-[900px]:px-0">
             <div
               role="tablist"
-              className="-ml-1 flex w-max min-w-full items-start justify-start gap-5"
+              className="-mx-1 flex w-max min-w-full items-start justify-start gap-5 after:-ml-5 after:block after:w-[calc((100vw_-_100%)/2)] after:shrink-0 after:content-[''] min-[900px]:after:hidden"
             >
               {tabs.map((tab, index) => {
                 const isActive = currentId === tab.id;
