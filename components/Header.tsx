@@ -6,11 +6,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const menus = [
+const menus: { label: string; href: string; download?: string }[] = [
   { label: "Work", href: "/" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
-  { label: "Resume", href: "#resume" },
+  {
+    label: "Resume",
+    href: "/danishin_resume.pdf",
+    download: "danishin_resume.pdf",
+  },
 ];
 
 export default function Header() {
@@ -96,24 +100,39 @@ export default function Header() {
         </Link>
 
         <nav className="hidden min-[600px]:flex items-center gap-2">
-          {menus.map(({ label, href }) => (
-            <Link
-              key={label}
-              href={href}
-              onClick={(e) => handleLinkClick(e, href)}
-              className={linkClass}
-            >
-              <span
-                className={`absolute left-1 top-1/2 -translate-y-1/2 w-[6px] h-[6px] rounded-full transition-colors ${
-                  isActive(href)
-                    ? "bg-[#FF027C]"
-                    : "bg-transparent group-hover:bg-[#BBBBBB]"
-                }`}
-                aria-hidden="true"
-              />
-              {label}
-            </Link>
-          ))}
+          {menus.map(({ label, href, download }) =>
+            download ? (
+              <a
+                key={label}
+                href={href}
+                download={download}
+                className={linkClass}
+              >
+                <span
+                  className="absolute left-1 top-1/2 -translate-y-1/2 w-[6px] h-[6px] rounded-full transition-colors bg-transparent group-hover:bg-[#BBBBBB]"
+                  aria-hidden="true"
+                />
+                {label}
+              </a>
+            ) : (
+              <Link
+                key={label}
+                href={href}
+                onClick={(e) => handleLinkClick(e, href)}
+                className={linkClass}
+              >
+                <span
+                  className={`absolute left-1 top-1/2 -translate-y-1/2 w-[6px] h-[6px] rounded-full transition-colors ${
+                    isActive(href)
+                      ? "bg-[#FF027C]"
+                      : "bg-transparent group-hover:bg-[#BBBBBB]"
+                  }`}
+                  aria-hidden="true"
+                />
+                {label}
+              </Link>
+            )
+          )}
         </nav>
 
         <button
@@ -171,28 +190,44 @@ export default function Header() {
               </button>
 
               <nav className="absolute left-0 top-[62px] flex w-full flex-col items-start gap-3 px-6">
-                {menus.map(({ label, href }) => (
-                  <Link
-                    key={label}
-                    href={href}
-                    aria-current={isActive(href) ? "page" : undefined}
-                    onClick={(e) => {
-                      handleLinkClick(e, href);
-                      setOpen(false);
-                    }}
-                    className={linkClass}
-                  >
-                    <span
-                      className={`absolute left-1 top-1/2 -translate-y-1/2 w-[6px] h-[6px] rounded-full transition-colors ${
-                        isActive(href)
-                          ? "bg-[#FF027C]"
-                          : "bg-transparent group-hover:bg-[#BBBBBB]"
-                      }`}
-                      aria-hidden="true"
-                    />
-                    {label}
-                  </Link>
-                ))}
+                {menus.map(({ label, href, download }) =>
+                  download ? (
+                    <a
+                      key={label}
+                      href={href}
+                      download={download}
+                      onClick={() => setOpen(false)}
+                      className={linkClass}
+                    >
+                      <span
+                        className="absolute left-1 top-1/2 -translate-y-1/2 w-[6px] h-[6px] rounded-full transition-colors bg-transparent group-hover:bg-[#BBBBBB]"
+                        aria-hidden="true"
+                      />
+                      {label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={label}
+                      href={href}
+                      aria-current={isActive(href) ? "page" : undefined}
+                      onClick={(e) => {
+                        handleLinkClick(e, href);
+                        setOpen(false);
+                      }}
+                      className={linkClass}
+                    >
+                      <span
+                        className={`absolute left-1 top-1/2 -translate-y-1/2 w-[6px] h-[6px] rounded-full transition-colors ${
+                          isActive(href)
+                            ? "bg-[#FF027C]"
+                            : "bg-transparent group-hover:bg-[#BBBBBB]"
+                        }`}
+                        aria-hidden="true"
+                      />
+                      {label}
+                    </Link>
+                  )
+                )}
               </nav>
             </aside>
           </div>,
