@@ -122,7 +122,7 @@ export default function Header() {
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen(true)}
-          className="min-[600px]:hidden h-9 w-20 px-3 pl-3 pr-1.5 flex items-center justify-center gap-0.5 rounded-[20px] text-[14px] leading-[146%] font-normal text-[#111111]"
+          className="min-[600px]:hidden -mr-1.5 h-9 w-20 pl-3 pr-1.5 flex items-center justify-center gap-0.5 rounded-[20px] text-[14px] leading-[146%] font-normal text-[#111111]"
         >
           <span>Menu</span>
           <span className="w-6 h-6 flex items-center justify-center">
