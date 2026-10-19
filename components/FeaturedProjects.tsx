@@ -24,7 +24,7 @@ const projects: Project[] = [
     subtitle: "Healthcare Commerce Ecosystem",
     period: "2024-2025",
     description:
-      "Sole Product Designer for a multi-platform healthcare commerce ecosystem. Redesigned end-to-end purchase and operational workflows, increasing conversion by 36%.",
+      "Sole Product Designer for a multi-platform healthcare commerce ecosystem. Redesigned end-to-end purchasing workflows, increasing checkout completion by 36%.",
     client: "weglow",
     logo: "/work/main_work_logo_1.png",
     image: "/work/main_work_1.png",
