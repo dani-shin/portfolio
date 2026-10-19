@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Dani Shin Portfolio",
     title: "Dani Shin, Designer",
     description:
-      "Design Systems & Complex Product Workflows | B2B•B2C•D2C",
+      "Design Systems & Complex Product Workflows",
     images: [
       {
         url: "https://www.danishin.net/og_image.png",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dani Shin, Designer",
     description:
-      "Design Systems & Complex Product Workflows | B2B•B2C•D2C",
+      "Design Systems & Complex Product Workflows",
     images: [
       {
         url: "https://www.danishin.net/og_image.png",
