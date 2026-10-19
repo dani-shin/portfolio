@@ -107,7 +107,7 @@ export default function FeaturedProjects() {
                     </svg>
                   </div>
 
-                  <div className="flex flex-col pr-12 min-[900px]:pr-16">
+                  <div className="flex flex-col pr-0.5">
                     <div className="relative w-[clamp(280px,calc(280px+(100vw-360px)*100/1440),380px)] h-[clamp(40px,calc(40px+(100vw-360px)*24/1440),64px)] max-[360px]:w-full max-[360px]:h-[40px] overflow-hidden">
                       <Image
                         src={project.logo}
