@@ -25,26 +25,27 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://www.danishin.net/",
     siteName: "Dani Shin Portfolio",
-    title: "Dani Shin | Product Designer",
+    title: "Dani Shin, Designer",
     description:
-      "I turn complex business rules into products people actually enjoy using.",
+      "Design Systems & Complex Product Workflows | B2B•B2C•D2C",
     images: [
       {
-        url: "/og_image.png",
+        url: "https://www.danishin.net/og_image.png",
         width: 2400,
         height: 1260,
+        type: "image/png",
         alt: "Dani Shin, Product Designer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dani Shin | Product Designer",
+    title: "Dani Shin, Designer",
     description:
-      "I turn complex business rules into products people actually enjoy using.",
+      "Design Systems & Complex Product Workflows | B2B•B2C•D2C",
     images: [
       {
-        url: "/og_image.png",
+        url: "https://www.danishin.net/og_image.png",
         alt: "Dani Shin, Product Designer",
       },
     ],
