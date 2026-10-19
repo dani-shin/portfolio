@@ -75,8 +75,8 @@ export default function FeaturedProjects() {
               className="block w-full"
               onClick={href === LOCKED_HREF ? handleLockedClick : undefined}
             >
-              <article className="w-full bg-white rounded-[4px] shadow-[0_6px_12px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col min-[769px]:flex-row relative group">
-                <div className="w-full pt-2 px-2 pb-0 min-[769px]:w-[512px] min-[769px]:p-[clamp(8px,calc(8px+(100vw-769px)*8/271),16px)]">
+              <article className="w-full bg-white rounded-[4px] shadow-[0_6px_12px_rgba(0,0,0,0.04)] overflow-hidden flex flex-col min-[851px]:flex-row relative group">
+                <div className="w-full pt-2 px-2 pb-0 min-[851px]:w-[512px] min-[851px]:p-[clamp(8px,calc(8px+(100vw-851px)*8/189),16px)]">
                   <div className="relative w-full aspect-square bg-[#F0F1EE] rounded-[2px] overflow-hidden">
                     <Image
                       src={project.image}
@@ -87,7 +87,7 @@ export default function FeaturedProjects() {
                   </div>
                 </div>
 
-                <div className="flex-1 px-5 py-14 min-[769px]:px-[clamp(20px,calc(20px+(100vw-769px)*8/271),28px)] min-[769px]:pt-20 flex flex-col justify-between relative">
+                <div className="flex-1 px-5 py-14 min-[851px]:px-[clamp(20px,calc(20px+(100vw-851px)*8/189),28px)] min-[851px]:pt-20 flex flex-col justify-between relative">
                   <div
                     aria-hidden="true"
                     className="featured-arrow absolute top-4 right-4 w-9 h-9 min-[481px]:top-6 min-[481px]:right-6 min-[481px]:w-12 min-[481px]:h-12 rounded-full border border-[#111111] flex items-center justify-center text-[#111111]"
@@ -117,7 +117,7 @@ export default function FeaturedProjects() {
                       />
                     </div>
 
-                    <h3 className="mt-[2px] min-[769px]:mt-0 text-[20px] max-[481px]:text-[18px] font-bold text-[#111111] leading-snug">
+                    <h3 className="mt-[2px] min-[851px]:mt-0 text-[20px] max-[481px]:text-[18px] font-bold text-[#111111] leading-snug">
                       {project.subtitle}
                     </h3>
 
@@ -125,7 +125,7 @@ export default function FeaturedProjects() {
                       {project.period}
                     </span>
 
-                    <p className="mt-4 min-[769px]:mt-5 text-[16px] max-[481px]:text-[14px] text-[#333333] leading-relaxed">
+                    <p className="mt-4 min-[851px]:mt-5 text-[16px] max-[481px]:text-[14px] text-[#333333] leading-relaxed">
                       {project.description}
                     </p>
                   </div>
