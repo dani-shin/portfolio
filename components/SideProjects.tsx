@@ -35,13 +35,13 @@ export default function SideProjects() {
       <div className="flex flex-col gap-6">
         <h2 className="type-title-1 text-[#111111]">Side Projects</h2>
 
-        <div className="scrollbar-hide mx-[calc((100%_-_100vw)/2)] overflow-x-auto px-[calc((100vw_-_100%)/2)] min-[900px]:mx-0 min-[900px]:overflow-visible min-[900px]:px-0">
-          <div className="flex gap-3 min-[900px]:grid min-[900px]:grid-cols-[repeat(3,minmax(0,1fr))] min-[900px]:gap-5">
+        <div className="scrollbar-hide mx-[calc((100%_-_100vw)/2)] overflow-x-auto px-[calc((100vw_-_100%)/2)] min-[850px]:mx-0 min-[850px]:overflow-visible min-[850px]:px-0">
+          <div className="flex gap-3 min-[850px]:grid min-[850px]:grid-cols-[repeat(3,minmax(0,1fr))] min-[850px]:gap-5">
             {sideProjects.map((project) => (
               <Link
                 key={project.href}
                 href={project.href}
-                className="block w-[80%] shrink-0 min-[900px]:w-full"
+                className="block w-[80%] shrink-0 min-[850px]:w-full"
               >
                 <article className="flex h-full w-full flex-col overflow-hidden rounded-[4px] border border-[#D6D6D6] bg-white shadow-[0_6px_12px_rgba(0,0,0,0.04)]">
                   <div className="w-full overflow-hidden">
@@ -68,7 +68,7 @@ export default function SideProjects() {
 
             <div
               aria-hidden
-              className="w-[calc((100vw_-_100%)/2_-_12px)] shrink-0 min-[900px]:hidden"
+              className="w-[calc((100vw_-_100%)/2_-_12px)] shrink-0 min-[850px]:hidden"
             />
           </div>
         </div>

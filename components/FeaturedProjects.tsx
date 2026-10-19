@@ -64,7 +64,7 @@ export default function FeaturedProjects() {
 
   return (
     <section className="py-8">
-      <div className="flex flex-col gap-9">
+      <div className="flex flex-col gap-[clamp(24px,calc(24px+(100vw-480px)*12/560),36px)]">
         {projects.map((project, index) => {
           const href = `/work/project${index + 1}`;
 
