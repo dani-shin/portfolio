@@ -81,16 +81,16 @@ export default function CaseStudyContent() {
       <div className="grid grid-cols-1 min-[900px]:grid-cols-2 gap-5 mb-15">
         <FlowCard
           bgClass="bg-[#E4E5E2]"
-          videoSrc="/work/project1/problem-1-1-video.mov"
-          imagePc="/work/project1/problem-1-1-pc.png"
-          imageMo="/work/project1/problem-1-1-mo.png"
+          videoSrc="/work/project1/problem-1-video.mov"
+          imagePc="/work/project1/problem-1-pc.png"
+          imageMo="/work/project1/problem-1-mo.png"
           alt="Before flow"
         />
         <FlowCard
           bgClass="bg-[#D7DFDC]"
-          videoSrc="/work/project1/problem-1-2-video.mov"
-          imagePc="/work/project1/problem-1-2-pc.png"
-          imageMo="/work/project1/problem-1-2-mo.png"
+          videoSrc="/work/project1/problem-2-video.mov"
+          imagePc="/work/project1/problem-2-pc.png"
+          imageMo="/work/project1/problem-2-mo.png"
           alt="After flow"
         />
       </div>
