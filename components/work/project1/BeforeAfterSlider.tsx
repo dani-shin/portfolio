@@ -10,7 +10,7 @@ const slides = [
     mobile: "/work/project1/slide-1-mo.png",
     title: "Main Page",
     description:
-      "Redesigned layout to show more per screen, cueing users to keep scrolling.",
+      "Redesigned layout to show more content per screen and encourage scrolling.",
   },
   {
     pc: "/work/project1/slide-2-pc.png",
