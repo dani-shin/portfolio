@@ -136,7 +136,7 @@ export default function CaseStudyContent() {
                 letter: "C",
                 title: "Automated follow-up message",
                 description:
-                  "For users who close the page entirely, an automated reminder is sent via direct messaging channel after a set period of inactivity, prompting them to return and complete the step.",
+                  "For users who close the page entirely, an automated reminder is sent via direct message after a set period of time, prompting them to return and complete the questionnaire.",
                 imageSrc: "/work/project1/solution-1-3.png",
               },
             ]}
