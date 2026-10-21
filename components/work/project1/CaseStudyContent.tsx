@@ -113,7 +113,7 @@ export default function CaseStudyContent() {
                 letter: "A",
                 title: "Immediate redirect",
                 description:
-                  "Upon payment completion, users are automatically taken to the questionnaire page, making it the clear and natural next step.",
+                  "Once payment is complete, users are taken straight to the questionnaire page, so completing it feels like the natural next step.",
                 imageSrc: "/work/project1/solution-1-1.png",
               },
             ]}
