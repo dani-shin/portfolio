@@ -148,8 +148,8 @@ export default function CaseStudyContent() {
         <h4 className="type-subtitle-1 text-[#333333] mb-1">Outcome</h4>
         <ul>
           {[
-            "+36% increase in checkout completion rate.",
-            "Prevented post-payment questionnaire abandonment.",
+            "Increased checkout completion rate by 36%.",
+            "Minimized questionnaire abandonment after payment.",
             "Reduced friction in the telemedicine purchase flow.",
           ].map((item, i) => (
             <li key={i} className="flex items-start gap-2 type-body-1 text-[#333333]">
