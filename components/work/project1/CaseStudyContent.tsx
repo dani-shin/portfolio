@@ -98,12 +98,12 @@ export default function CaseStudyContent() {
       <div className="max-w-[960px] mb-16">
         <h4 className="type-subtitle-1 text-[#111111] mb-1">Constraint</h4>
         <p className="type-body-1 text-[#333333] mb-15">
-          My proposed fix was simple: move payment first, questionnaire second. But this introduced a critical risk. Since prescription products can’t be shipped without a completed medical consultation, any customer who pays but skips the questionnaire ends up with an unshippable order. This would not only frustrate users but also create a wave of cancellations and customer support requests on the operations side.
+          My proposed approach was simple: move payment first, questionnaire second. However, this introduced a critical risk. Because prescription products can’t be shipped without a completed medical consultation, any customer who paid but skipped the questionnaire would end up with an order we couldn’t fulfill. That would frustrate customers and drive up cancellations and support requests for the operations team.
         </p>
 
         <h4 className="type-subtitle-1 text-[#111111] mb-1">Solution</h4>
         <p className="type-body-1 text-[#333333] mb-6">
-          I moved forward with the reordered flow and designed a three-layer system to ensure every paying customer completes the questionnaire.
+          I implemented the new flow and designed a three-layer system to ensure that every paying customer completed the medical questionnaire.
         </p>
 
         <div className="space-y-5">
