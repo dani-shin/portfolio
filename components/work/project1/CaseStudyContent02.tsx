@@ -70,36 +70,36 @@ export default function CaseStudyContent02() {
       <div className="max-w-[960px] mb-15">
         <h4 className="type-subtitle-1 text-[#111111] mb-1">Problem</h4>
         <p className="type-body-1 text-[#333333]">
-          The platform supported both Korean traditional medicine and general medicine products, each requiring different doctors, questionnaires, and consultation flows. When users purchased products across both categories, they were forced to complete the booking process twice, from questionnaires to doctor selection, creating a fragmented experience for both customers and internal teams.
+          The platform offered both Korean traditional medicine and general medicine products, each with its own doctors, questionnaires, and consultation flow. When customers bought from both categories, they had to go through the entire booking process twice, from questionnaires to doctor selection. This created a fragmented experience for customers and extra work for internal teams.
         </p>
       </div>
 
-      <h4 className="type-subtitle-1 text-[#111111] mb-4">How questions were set up and why it broke down</h4>
+      <h4 className="type-subtitle-1 text-[#111111] mb-4">How the questionnaire pipeline broke down</h4>
       <div className="w-full grid grid-cols-1 min-[768px]:grid-cols-3 gap-3 min-[768px]:gap-5 mb-15">
         <div className="bg-white rounded-[4px] p-5 min-[768px]:p-6 flex flex-col gap-1 min-[768px]:gap-2 text-[#333333]">
           <h3 className="font-['Pretendard'] type-subtitle-2">
-            01.
+            Creating questions
           </h3>
           <p className="font-['Pretendard'] type-body-2">
-            <strong className="type-subtitle-2"> The ops team had to create 15–20 questions for every new product,</strong>{" "} even when the content overlapped with existing ones.
+            For every new product, the ops team had to write 15–20 questions from scratch, even when many overlapped with existing ones.
           </p>
         </div>
 
         <div className="bg-white rounded-[4px] p-5 min-[900px]:p-6 flex flex-col gap-1 min-[900px]:gap-2 text-[#333333]">
           <h3 className="font-['Pretendard'] type-subtitle-2">
-            02.
+            Cleaning up duplicates
           </h3>
           <p className="font-['Pretendard'] type-body-2">
-            <strong className="type-subtitle-2">The dev team had to manually dedupe questions within the same category,</strong>{" "} so customers only saw each one once.
+            The dev team then had to manually remove duplicate questions within each category so customers saw each one only once.
           </p>
         </div>
 
         <div className="bg-white rounded-[4px] p-5 min-[900px]:p-6 flex flex-col gap-1 min-[900px]:gap-2 text-[#333333]">
           <h3 className="font-['Pretendard'] type-subtitle-2">
-            03.
+            Using the questionnaire
           </h3>
           <p className="font-['Pretendard'] type-body-2">
-            <strong className="type-subtitle-2">Customers buying across two categories had to repeat the entire booking process twice,</strong>{" "} from questionnaires to doctor selection.
+            Because questionnaires were built separately per category, customers buying from both had to repeat the entire booking process twice.
           </p>
         </div>
       </div>
@@ -107,10 +107,10 @@ export default function CaseStudyContent02() {
       <div className="max-w-[960px] mb-15">
         <h4 className="type-subtitle-1 text-[#111111] mb-1">Constraint</h4>
         <p className="type-body-1 text-[#333333] mb-9">
-          The goal was twofold: minimize the questionnaire to only what was essential, and realign the booking flow with users' natural mental model, choosing an available time first, then selecting a doctor. But two structural problems made this harder than it sounds.
+        The goal was twofold: minimize the questionnaire to only what was essential, and realign the booking flow with users’ natural mental model: choosing an available time first, then selecting a doctor. But two structural problems made this harder than expected.
         </p>
         <p className="type-body-1 text-[#333333] mb-6">
-          The first was scheduling logic. Each doctor supported a different set of products, schedules, and prescription categories, which made it easy for appointments to become fragmented across categories.
+          The first was scheduling logic. Each doctor supported a different set of products, schedules, and prescription categories, which meant users often had to make separate appointments for different categories.
         </p>
 
         <div className="mb-7 mx-[calc((100%_-_100vw)/2)] overflow-x-auto overscroll-x-contain px-[calc((100vw_-_100%)/2)] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden min-[900px]:mx-0 min-[900px]:w-full min-[900px]:max-w-[1040px] min-[900px]:overflow-visible min-[900px]:px-0">
@@ -127,7 +127,7 @@ export default function CaseStudyContent02() {
         </div>
 
         <p className="type-body-1 text-[#333333] mb-15">
-          The second was that the existing questionnaire system was product-centric by design. Every time a new product was added, developers had to manually find and remove duplicate questions on the back end, a process that wasn't scalable or sustainable.
+          The second was the product-centric questionnaire system. Every time a new product was added, developers had to manually find and remove duplicate questions, a process that wasn't scalable or sustainable.
         </p>
 
         <h4 className="type-subtitle-1 text-[#111111] mb-1">Solution</h4>
