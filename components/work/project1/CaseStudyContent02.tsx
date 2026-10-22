@@ -44,12 +44,12 @@ const INFO_ITEMS = [
   {
     title: "Feasibility Check",
     description:
-      "Since not all providers could treat every product, a time-first flow risked forcing patients into multiple separate consultations for different products.",
+      "Since not all providers could treat every product, a time-first flow could force users into multiple separate consultations for different products.",
   },
   {
     title: "Operational Decision",
     description:
-      "Prioritized providers capable of covering all products within a category, ensuring one consultation could address multiple needs.",
+      "Prioritized providers who could cover all products within a category, allowing users to address multiple needs in a single consultation.",
   },
 ];
 
@@ -107,7 +107,7 @@ export default function CaseStudyContent02() {
       <div className="max-w-[960px] mb-15">
         <h4 className="type-subtitle-1 text-[#111111] mb-1">Constraint</h4>
         <p className="type-body-1 text-[#333333] mb-9">
-        The goal was twofold: minimize the questionnaire to only what was essential, and realign the booking flow with users’ natural mental model: choosing an available time first, then selecting a doctor. But two structural problems made this harder than expected.
+        The goal was twofold: minimize the questionnaire to only what was essential, and realign the booking flow with users’ natural mental model, where they choose an available time first and then select a doctor. But two structural problems made this harder than expected.
         </p>
         <p className="type-body-1 text-[#333333] mb-6">
           The first was scheduling logic. Each doctor supported a different set of products, schedules, and prescription categories, which meant users often had to make separate appointments for different categories.
@@ -132,14 +132,14 @@ export default function CaseStudyContent02() {
 
         <h4 className="type-subtitle-1 text-[#111111] mb-1">Solution</h4>
         <p className="type-body-1 text-[#333333] mb-6">
-          I redesigned both the questionnaire architecture and booking flow around the user's mental model, rather than internal operational structure.
+          I redesigned both the questionnaire architecture and the booking flow around users’ mental model, rather than internal operational structure.
         </p>
 
         <div className="mb-12">
           <WorkInfoText
             letter="A"
             title="Unified questionnaire architecture"
-            description="I worked with the development team through several rounds of discussion to find a structure that would reduce their workload while making it easier to add new products down the line. We restructured the system around questions, rather than products, as the primary unit, allowing each question to link to any number of relevant products."
+            description="I worked with the development team through several rounds of discussion to find a structure that would reduce their workload and make it easier to add new products in the future. Instead of creating a separate set of questions for each product, we redesigned the system so that questions became the primary unit, and each question could be linked to as many products as needed."
           />
 
           <div className="w-full mt-5 overflow-hidden rounded-[4px] bg-[#D7DFDC]">
@@ -197,7 +197,7 @@ export default function CaseStudyContent02() {
           <WorkInfoText
             letter="B"
             title="Time-first booking flow"
-            description="To improve the telehealth booking flow, I started by examining my own booking process and noticed that I checked for available times before considering which doctor to see. This led me to hypothesize that the existing “doctor-first” flow might not align with users’ actual mental model, so I conducted research to validate this."
+            description="To improve the telehealth booking flow, I started by looking at my own booking habits and noticed that I checked available times before choosing a doctor. This led me to hypothesize that the existing “provider-first” flow might not match users’ mental model, so I conducted research to see whether users actually thought this way."
           />
 
           <div className="flex w-full max-w-[960px] flex-col gap-3 mt-5 min-[769px]:grid min-[769px]:grid-cols-[308fr_306fr_306fr] min-[769px]:gap-5">
@@ -256,7 +256,7 @@ export default function CaseStudyContent02() {
             </div>
 
             <p className="type-body-1 px-4 text-center text-[#333333]">
-              Users prioritize <strong>“availability”</strong> over choice of provider
+              Users prioritize <strong>“available time slots”</strong> over choice of provider
             </p>
           </div>
         </div>
@@ -312,7 +312,7 @@ export default function CaseStudyContent02() {
         <ul>
           {[
             "Reduced operational and development workload by over 60%.",
-            "New products can now be added without manual dedupe work from developers.",
+            "New products can now be added without requiring developers to manually remove duplicate questions.",
           ].map((item, i) => (
             <li key={i} className="flex items-start gap-2 type-body-1 text-[#333333]">
               <span className="flex h-6 w-4 flex-none items-center justify-center py-1 min-[481px]:h-7 min-[481px]:py-1.5">
