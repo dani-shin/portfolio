@@ -312,7 +312,8 @@ export default function CaseStudyContent02() {
         <ul>
           {[
             "Reduced operational and development workload by over 60%.",
-            "New products can now be added without requiring developers to manually remove duplicate questions.",
+            "Eliminated the need for developers to manually remove duplicate questions when adding new products.",
+            "Removed backtracking by switching to a time-first flow, as confirmed in usability testing.",
           ].map((item, i) => (
             <li key={i} className="flex items-start gap-2 type-body-1 text-[#333333]">
               <span className="flex h-6 w-4 flex-none items-center justify-center py-1 min-[481px]:h-7 min-[481px]:py-1.5">
