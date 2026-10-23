@@ -286,7 +286,7 @@ export default function CaseStudyContent02() {
             />
           </div>
 
-          <div className="fluid-info-pt fluid-info-px fluid-info-pb fluid-info-gap flex flex-col items-start justify-center">
+          <div className="fluid-info-pt fluid-info-px fluid-info-pb flex flex-col items-start justify-center gap-[clamp(16px,2.08vw,20px)]">
             {INFO_ITEMS.map((item, i) => (
               <div key={item.title} className="contents">
                 {i > 0 && (
